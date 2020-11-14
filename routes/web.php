@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +20,11 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('content/index');
+    return view('other/about');
 });
+
+Route::get('/register', function () {
+    return view('content/register');
+});
+
+Route::post('/user', [UserController::class, 'store']);
